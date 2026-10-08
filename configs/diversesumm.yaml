@@ -1,0 +1,5 @@
+base: default.yaml
+rw:
+  words: 300
+conf:
+  max_pairs: 6000

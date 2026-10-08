@@ -1,0 +1,4 @@
+base: default.yaml
+rw:
+  order: time
+  words: 40

@@ -1,0 +1,13 @@
+numpy
+pyyaml
+rapidfuzz
+lightgbm
+torch
+transformers
+sentence-transformers
+anthropic
+openai
+datasets
+spacy
+rouge-score
+bert-score

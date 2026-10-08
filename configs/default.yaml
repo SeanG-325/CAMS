@@ -1,0 +1,68 @@
+llm:
+  backend: anthropic
+  model: claude-opus-4-8
+  base_url: null
+  temperature: 0.0
+  top_p: 1.0
+  retries: 3
+  max_tokens:
+    extract: 4096
+    rewrite: 768
+    facts: 1024
+    judge: 512
+pre:
+  chunk: 512
+  overlap: 64
+  rho: 0.85
+emb:
+  model: thenlper/gte-large
+  batch: 64
+clu:
+  sim: 0.82
+  ent: 0.5
+nli:
+  three: MoritzLaurer/DeBERTa-v3-base-mnli
+  sel: google/t5_xxl_true_nli_mixture
+  ver: google/t5_11b_trueteacher_and_anli
+  eval: tals/albert-xlarge-vitaminc-mnli
+  bs: 32
+  bs_sup: 8
+  win: 300
+conf:
+  p: 0.7
+  cand_sim: 0.7
+  max_pairs: 3000
+sel:
+  lam: 0.5
+  theta: 0.6
+  ss_floor: 0.5
+  policy: both
+  lr: [0.05, 0.1]
+  n_est: [100, 300, 500]
+  leaves: 31
+  es: 50
+  seed: 42
+  silver:
+    tau: 0.5
+    lo: 0.3
+    emb: 0.85
+    rouge: 0.5
+rw:
+  order: time
+  words: 260
+ver:
+  tau: 0.5
+  R: 2
+  topk: 10
+e2e:
+  psg: 120
+faith:
+  align_ckpt: AlignScore-large.ckpt
+  fs_judge: eval
+eval:
+  tau_nli: 0.5
+  taus: [0.3, 0.5, 0.7]
+  B: 10000
+  m: 24
+  alpha: 0.05
+  seed: 0
